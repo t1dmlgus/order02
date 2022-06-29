@@ -1,8 +1,10 @@
-package com.t1dmlgus.order02;
+package com.t1dmlgus.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
+@EnableJpaAuditing
 @SpringBootApplication
 public class Order02Application {
 
