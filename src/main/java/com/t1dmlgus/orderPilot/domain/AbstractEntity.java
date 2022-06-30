@@ -1,4 +1,4 @@
-package com.t1dmlgus.order.domain;
+package com.t1dmlgus.orderPilot.domain;
 
 
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.t1dmlgus.order;
+package com.t1dmlgus.orderPilot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
