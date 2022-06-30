@@ -1,7 +1,8 @@
-package com.t1dmlgus.order.presentation.user;
+package com.t1dmlgus.orderPilot.presentation.user;
 
 
-import com.t1dmlgus.order.application.user.UserUseCase;
+import com.t1dmlgus.orderPilot.service.user.UserInfo;
+import com.t1dmlgus.orderPilot.service.user.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -18,12 +19,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserApiController {
 
-    private final UserUseCase userUseCase;
+    private final UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<UserDto.signupResponse> signup(@RequestBody UserDto.signupRequest request){
+    public ResponseEntity<UserInfo> signup(@RequestBody UserDto.signupRequest request){
 
-        UserDto.signupResponse signup = userUseCase.signup(request);
+        UserInfo signup = userService.signup(request.toCommand());
         return new ResponseEntity<>(signup, HttpStatus.OK);
     }
 

@@ -1,6 +1,6 @@
-package com.t1dmlgus.order.presentation.user;
+package com.t1dmlgus.orderPilot.presentation.user;
 
-import com.t1dmlgus.order.domain.user.User;
+import com.t1dmlgus.orderPilot.service.user.UserCommand;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,8 +22,8 @@ public class UserDto {
             this.password = password;
         }
 
-        public User toEntity(){
-            return User.builder()
+        public UserCommand toCommand(){
+            return UserCommand.builder()
                     .username(username)
                     .email(email)
                     .password(password)
@@ -38,6 +38,7 @@ public class UserDto {
         private Long id;
         private String username;
         private String email;
+
     }
 
 }
