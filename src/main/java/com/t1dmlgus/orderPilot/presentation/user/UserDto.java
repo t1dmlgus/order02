@@ -5,14 +5,24 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 public class UserDto {
 
     @Getter
     @NoArgsConstructor
     public static class signupRequest{
 
+
+        @NotBlank(message = "username 은 필수값입니다.")
         private String username;
+
+        @Email(message = "email 형식에 맞아야한다.")
+        @NotBlank(message = "email 은 필수값입니다.")
         private String email;
+
+        @NotBlank(message = "password 는 필수값입니다.")
         private String password;
 
         @Builder
@@ -38,7 +48,6 @@ public class UserDto {
         private Long id;
         private String username;
         private String email;
-
     }
 
 }

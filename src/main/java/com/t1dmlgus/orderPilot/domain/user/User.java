@@ -3,12 +3,14 @@ package com.t1dmlgus.orderPilot.domain.user;
 import com.t1dmlgus.orderPilot.domain.AbstractEntity;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 
 @Getter
 @Table(name = "users")
+@NoArgsConstructor
 @Entity
 public class User extends AbstractEntity {
 
@@ -16,12 +18,12 @@ public class User extends AbstractEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private final String username;
-    private final String email;
-    private final String password;
+    private String username;
+    private String email;
+    private String password;
 
     @Enumerated(EnumType.STRING)
-    private final Grade grade;
+    private Grade grade;
 
     @Getter
     @RequiredArgsConstructor

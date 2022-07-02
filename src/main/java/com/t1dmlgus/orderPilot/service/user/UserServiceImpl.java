@@ -1,6 +1,7 @@
 package com.t1dmlgus.orderPilot.service.user;
 
 
+import com.t1dmlgus.orderPilot.common.exception.UserNotFoundException;
 import com.t1dmlgus.orderPilot.domain.user.User;
 import com.t1dmlgus.orderPilot.domain.user.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,13 @@ public class UserServiceImpl implements UserService{
         User user = userCommand.toEntity();
         User signupUser = userRepository.save(user);
         return new UserInfo(signupUser);
+    }
+
+    @Override
+    public UserInfo getUser(Long userId) {
+
+        User user = userRepository.findById(userId)
+                .orElseThrow(UserNotFoundException::new);
+        return new UserInfo(user);
     }
 }
