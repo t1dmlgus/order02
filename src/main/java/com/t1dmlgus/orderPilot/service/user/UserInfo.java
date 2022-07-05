@@ -3,6 +3,7 @@ package com.t1dmlgus.orderPilot.service.user;
 import com.t1dmlgus.orderPilot.domain.user.User;
 import lombok.Getter;
 
+
 @Getter
 public class UserInfo {
 
