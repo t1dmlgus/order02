@@ -23,5 +23,6 @@ server:
 
 
 
-
+logging:
+  config: classpath:logback-local.xml
 

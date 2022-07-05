@@ -1,7 +1,7 @@
-package com.t1dmlgus.order.presentation.user;
+package com.t1dmlgus.orderPilot.presentation.user;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.t1dmlgus.order.application.user.UserUseCase;
+import com.t1dmlgus.orderPilot.service.user.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ class UserApiControllerTest {
     private MockMvc mockMvc;
 
     @Autowired
-    private UserUseCase userUseCase;
+    private UserService userService;
 
     @Autowired
     private ObjectMapper objectMapper;
